@@ -6,6 +6,7 @@ import DateTime from "./pages/DateTime";
 import Number from "./pages/Number";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import "./App.css";
+import LanguageProvider from "./context/Language";
 const Layout = () => {
   return (
     <>
@@ -21,15 +22,17 @@ const Layout = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="text" element={<Text name="MrDevGhost" />} />
-          <Route path="no" element={<Number no={1} amount={100} />} />
-          <Route path="time" element={<DateTime />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="text" element={<Text name="MrDevGhost" />} />
+            <Route path="no" element={<Number no={1} amount={100} />} />
+            <Route path="time" element={<DateTime />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </LanguageProvider>
   );
 };
 

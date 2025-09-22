@@ -1,10 +1,14 @@
 import React from "react";
-
+import { FormattedMessage } from "react-intl";
 const Text = (props) => {
   return (
     <>
-      <p>Welcome to Educative, {props.name}</p>
-      <p>Learn localization in React</p>
+      <p>
+        <FormattedMessage id="welcomeToEducative" /> {props.name}
+      </p>
+      <p>
+        <FormattedMessage id="learnLocalization" />
+      </p>
     </>
   );
 };

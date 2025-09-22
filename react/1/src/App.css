@@ -12,14 +12,14 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   background-color: #ebebeb;
 }
 
 header div {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   width: 90%;
   padding: 0.5em 1em;
 }
@@ -42,4 +42,23 @@ a:hover {
 .visible {
   display: flex;
   background-color: "red";
+}
+
+select {
+  padding-inline: 20px;
+  border: 0;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 1rem;
+
+  &:focus {
+    outline: none;
+    background-color: green;
+  }
+}
+
+header span {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
