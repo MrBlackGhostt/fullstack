@@ -20,6 +20,7 @@ async function connectDB() {
     await client.query(
       "CREATE TABLE IF NOT EXISTS json_store(id SERIAL, data JSONB, created_at TIMESTAMP, updated_at TIMESTAMP)"
     );
+
     console.log("created the table");
   } catch (error) {
     console.error("Connection error", error);
